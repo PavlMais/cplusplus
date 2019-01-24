@@ -1,0 +1,5 @@
+﻿  Source.cpp
+c:\users\pavlmais\desktop\cplusplus\classwork\2019.01.24\2019.01.24\source.cpp(14): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\pavlmais\desktop\cplusplus\classwork\2019.01.24\2019.01.24\source.cpp(40): warning C4715: 'foundLeft': not all control paths return a value
+c:\users\pavlmais\desktop\cplusplus\classwork\2019.01.24\2019.01.24\source.cpp(44): warning C4715: 'foundRight': not all control paths return a value
+  2019.01.24.vcxproj -> C:\Users\PavlMais\Desktop\cplusplus\ClassWork\2019.01.24\Debug\2019.01.24.exe
