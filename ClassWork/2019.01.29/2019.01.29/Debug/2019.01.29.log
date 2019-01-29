@@ -1,2 +1,57 @@
 ﻿  Source.cpp
+c:\users\pavlmais\desktop\cplusplus\classwork\2019.01.29\2019.01.29\source.cpp(36): warning C4305: 'argument': truncation from 'double' to 'T'
+          with
+          [
+              T=float
+          ]
+c:\users\pavlmais\desktop\cplusplus\classwork\2019.01.29\2019.01.29\source.cpp(42): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\pavlmais\desktop\cplusplus\classwork\2019.01.29\2019.01.29\source.cpp(43): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\pavlmais\desktop\cplusplus\classwork\2019.01.29\2019.01.29\source.cpp(44): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\pavlmais\desktop\cplusplus\classwork\2019.01.29\2019.01.29\source.cpp(45): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\pavlmais\desktop\cplusplus\classwork\2019.01.29\2019.01.29\source.cpp(46): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\pavlmais\desktop\cplusplus\classwork\2019.01.29\2019.01.29\source.cpp(50): warning C4305: 'argument': truncation from 'double' to 'T'
+          with
+          [
+              T=float
+          ]
+c:\users\pavlmais\desktop\cplusplus\classwork\2019.01.29\2019.01.29\source.cpp(51): warning C4305: 'argument': truncation from 'double' to 'T'
+          with
+          [
+              T=float
+          ]
+c:\users\pavlmais\desktop\cplusplus\classwork\2019.01.29\2019.01.29\source.cpp(53): warning C4305: 'argument': truncation from 'double' to 'T'
+          with
+          [
+              T=float
+          ]
+c:\users\pavlmais\desktop\cplusplus\classwork\2019.01.29\2019.01.29\source.cpp(54): warning C4305: 'argument': truncation from 'double' to 'T'
+          with
+          [
+              T=float
+          ]
+c:\users\pavlmais\desktop\cplusplus\classwork\2019.01.29\2019.01.29\source.cpp(84): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\pavlmais\desktop\cplusplus\classwork\2019.01.29\2019.01.29\source.cpp(95): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\pavlmais\desktop\cplusplus\classwork\2019.01.29\2019.01.29\source.cpp(101): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\pavlmais\desktop\cplusplus\classwork\2019.01.29\2019.01.29\source.cpp(102): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\pavlmais\desktop\cplusplus\classwork\2019.01.29\2019.01.29\source.cpp(103): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\pavlmais\desktop\cplusplus\classwork\2019.01.29\2019.01.29\source.cpp(109): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
+c:\users\pavlmais\desktop\cplusplus\classwork\2019.01.29\2019.01.29\source.cpp(112): warning C4305: 'argument': truncation from 'double' to 'T'
+          with
+          [
+              T=float
+          ]
+c:\users\pavlmais\desktop\cplusplus\classwork\2019.01.29\2019.01.29\geometry.h(43): warning C4244: '=': conversion from 'U' to 'T', possible loss of data
+          with
+          [
+              U=double
+          ]
+          and
+          [
+              T=float
+          ]
+  c:\users\pavlmais\desktop\cplusplus\classwork\2019.01.29\2019.01.29\source.cpp(42): note: see reference to function template instantiation 'vec<3,float> operator *<3,float,double>(const vec<3,float> &,const U &)' being compiled
+          with
+          [
+              U=double
+          ]
   2019.01.29.vcxproj -> C:\Users\PavlMais\Desktop\cplusplus\ClassWork\2019.01.29\Debug\2019.01.29.exe
