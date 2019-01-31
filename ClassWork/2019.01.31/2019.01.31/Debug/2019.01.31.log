@@ -1,0 +1,4 @@
+﻿  Source.cpp
+c:\users\pavlmais\desktop\cplusplus\classwork\2019.01.31\2019.01.31\source.cpp(35): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\pavlmais\desktop\cplusplus\classwork\2019.01.31\2019.01.31\source.cpp(140): warning C4715: 'FoundNam': not all control paths return a value
+  2019.01.31.vcxproj -> C:\Users\PavlMais\Desktop\cplusplus\ClassWork\2019.01.31\Debug\2019.01.31.exe
