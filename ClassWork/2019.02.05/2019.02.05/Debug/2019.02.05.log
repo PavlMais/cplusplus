@@ -1,0 +1,22 @@
+﻿  Source.cpp
+c:\users\pavlmais\desktop\cplusplus\classwork\2019.02.05\2019.02.05\source.cpp(138): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\pavlmais\desktop\cplusplus\classwork\2019.02.05\2019.02.05\source.cpp(23): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  c:\users\pavlmais\desktop\cplusplus\classwork\2019.02.05\2019.02.05\source.cpp(61): note: see reference to function template instantiation 'int getMin<double*>(T,const int)' being compiled
+          with
+          [
+              T=double *
+          ]
+c:\users\pavlmais\desktop\cplusplus\classwork\2019.02.05\2019.02.05\source.cpp(29): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+  c:\users\pavlmais\desktop\cplusplus\classwork\2019.02.05\2019.02.05\source.cpp(62): note: see reference to function template instantiation 'int getAVG<double*>(T,const int)' being compiled
+          with
+          [
+              T=double *
+          ]
+c:\users\pavlmais\desktop\cplusplus\classwork\2019.02.05\2019.02.05\source.cpp(35): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  c:\users\pavlmais\desktop\cplusplus\classwork\2019.02.05\2019.02.05\source.cpp(63): note: see reference to function template instantiation 'int getMax<double*>(T,const int)' being compiled
+          with
+          [
+              T=double *
+          ]
+c:\users\pavlmais\desktop\cplusplus\classwork\2019.02.05\2019.02.05\source.cpp(91): warning C4715: 'searchFirst': not all control paths return a value
+  2019.02.05.vcxproj -> C:\Users\PavlMais\Desktop\cplusplus\ClassWork\2019.02.05\Debug\2019.02.05.exe
