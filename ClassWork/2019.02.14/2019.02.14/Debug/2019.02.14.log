@@ -1,0 +1,4 @@
+﻿  Source.cpp
+c:\users\pavlmais\desktop\cplusplus\classwork\2019.02.14\2019.02.14\source.cpp(27): warning C4172: returning address of local variable or temporary: sum
+c:\users\pavlmais\desktop\cplusplus\classwork\2019.02.14\2019.02.14\source.cpp(31): warning C4172: returning address of local variable or temporary: sum
+  2019.02.14.vcxproj -> C:\Users\PavlMais\Desktop\cplusplus\ClassWork\2019.02.14\Debug\2019.02.14.exe
