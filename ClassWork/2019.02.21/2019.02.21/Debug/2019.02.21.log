@@ -1,0 +1,4 @@
+﻿  Source.cpp
+c:\users\pavlmais\desktop\cplusplus\classwork\2019.02.21\2019.02.21\source.cpp(39): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\pavlmais\desktop\cplusplus\classwork\2019.02.21\2019.02.21\source.cpp(75): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  2019.02.21.vcxproj -> C:\Users\PavlMais\Desktop\cplusplus\ClassWork\2019.02.21\Debug\2019.02.21.exe
