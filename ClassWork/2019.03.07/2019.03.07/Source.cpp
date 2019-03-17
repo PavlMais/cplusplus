@@ -1,134 +1,189 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
+
+
+std::string *names;
+float *marks;
+int size;
+int const PRDM = 5;
 
 
 
-void fillArr(string *data, const int size) {
-	int mark1, mark2, mark3, markA;
-	cout << "\n\tNOT use space for names!!!\n";
-	for (int i = 0; i < size; i++)
-	{
-		string name, line;
-		
-		cout << "\tStudent "<< i + 1 <<" name: ";
-		cin >> name;
-		cout << "\n\tEnter mark 1: ";
-		cin >> mark1;
-		cout << "\tEnter mark 2: ";
-		cin >> mark2;
-		cout << "\tEnter mark 3: ";
-		cin >> mark3;
-		
-		markA = (mark1 + mark2 + mark3) / 3;
 
-
-		line += (mark1 < 10) ? "0" + to_string(mark1) : to_string(mark1);
-		line += (mark2 < 10) ? "0" + to_string(mark2) : to_string(mark2);
-		line += (mark3 < 10) ? "0" + to_string(mark3) : to_string(mark3);
-		line += (markA < 10) ? "0" + to_string(markA) : to_string(markA);
-
-		line += name;
-
-		data[i] = line;
-		
-		
-		
-	}
-}
-
-void printSort(string *data, int const size) {
-	cout << "\nN Name    Matem  Fizuk  Englis   AVG";
+void fillmarks() {
+	int buf_mark;
 	for (int i = 0; i < size; i++){
+		std::cout << "Enter student name: ";
+		std::cin >> names[i];
+		float sum = 0;
+		std::cout << "Enter 3 mark (1 - 12)\n";
+		for (int s = 0; s < 3; s++){
+			std::cout << "\nMark " << s + 1 << " : ";
 
-		cout << "\n" << i + 1 << " " << data[i].substr(8) << "\t\t" << data[i][0]<<data[i][1] << "\t" <<
-		data[i][2] << data[i][3] << "\t" << data[i][4] << data[i][5] << "\t" << data[i][6] << data[i][7];
+			std::cin >> buf_mark;
+			while (buf_mark > 12 || buf_mark < 1) {
+				std::cout << "\n   1 - 12 Please";
+				std::cout << "\nMark " << s + 1 << " : ";
+
+				std::cin >> buf_mark;
+
+			}
+			marks[i * PRDM + s] = buf_mark;
+
+			sum += marks[i * PRDM + s];
+		}
+		marks[i * PRDM + 3] = sum / 3;
+		if (marks[i * PRDM + 3] > 10.7) marks[i * PRDM + 4] = 1;
+		else marks[i * PRDM + 4] = 0;
+		
 	}
 }
 
-void reset(string *data, int const size) {
-	string user_name, str_mark;
-	int predmet, new_mark, user_id = -1;
-	
-	do{
-		user_name = "";
-		cout << "\n\tEnter user name: ";
-		cin >> user_name;
+void print() {
 
+	std::cout << "ID  Name    Phys Math Engl AVG Stupedia";
+	for (int i = 0; i < size; i++){
+		std::cout << "\n" << i << " " << names[i];
+		for (int s = 0; s < 5; s++){
 
-
-		for (int i = 0; i < size; i++)
-			if (data[i].substr(8) == user_name) user_id = i;
-
-		if (user_id == -1) cout << "\n\tUser name invalid!";
-		
-	} while (user_id == -1);
-		
-	do{
-		cout << "\n\tEnter predmet id: ";
-		cin >> predmet;
-		
-	} while (0 > predmet > 4);
-
-	
-	cout << "\n\tEnter new mark: ";
-	cin >> new_mark;
-	str_mark = (new_mark < 10) ? "0" + to_string(new_mark) : to_string(new_mark);
-
-	switch (predmet){
-	case 1:
-
-		data[user_id] = str_mark + data[user_id].substr(3);
-
-		break;
-	case 2:
-		break;
-	case 3:
-		break;
-	default:
-		cout << "\n\tNo predmet " << predmet;
-		break;
-	}
-
-}
-int main() {
-	
-
-	
-
-
-
-	int size, select;
-	cout << "\n\n\tEnter count students: ";
-	cin >> size;
-	
-	string *data = new string[size];
-
-	
-	fillArr(data,  size);
-	printSort(data, size);
-
-
-
-	while (true)
-	{
-		cout << "\t1 Perezdacha\n";
-		cin >> select;
-		switch (select) {
-		case 1:
-			reset(data, size);
-
-			break;
-		
-
-
-
+			std::cout << "    " << marks[i * PRDM + s];
 		}
 	}
+}
+
+void retake() {
+	int stud_id, thing_id, mark, sum = 0; 
+
+	std::cout << "Enter student id: ";
+	std::cin >> stud_id;
+	std::cout << "\n0 Phys  1 Math  2 Engl\nEnter predmet id: ";
+	std::cin >> thing_id;
+
+	std::cout << "Enter new mark: ";
+	std::cin >> mark;
+	
+	while (mark > 12 || mark < 1) {
+		std::cout << "\n   1 - 12 Please";
+		std::cout << "Enter new mark: ";
+		std::cin >> mark;
+	}
 	
 
-	cout << "\n\n";
+
+	marks[stud_id * PRDM + thing_id] = mark;
+
+	for (int s = 0; s < 3; s++) sum += marks[stud_id * PRDM + s];
+	
+
+	marks[stud_id * PRDM + 3] = sum / 3;
+	if (marks[stud_id * PRDM + 3] > 10.7) marks[stud_id * PRDM + 4] = 1;
+	else marks[stud_id * PRDM + 4] = 0;
+
+}
+
+
+
+void printSort(int key = 0) {
+	int max = 0;
+	int max_id = 0;
+	bool noCheck;
+	int *cheched = new int[size];
+
+	
+	std::cout << "ID  Name    Phys Math Engl AVG Stupedia";
+
+	for (int i = 0; i < size; i++)
+	{
+		for (int j = 0; j < size; j++)
+		{
+			noCheck = true;
+			for (int s = 0; s < size; s++)
+			{
+				if (cheched[s] == j) noCheck = false;
+			}
+
+
+			if (marks[j * PRDM + key] > max && noCheck) {
+
+				max = marks[j * PRDM + key];
+			}
+		}
+
+
+		cheched[i] = max_id;
+		
+
+
+		std::cout << "\n" << max_id << " " << names[max_id];
+		for (int s = 0; s < PRDM; s++) {
+			std::cout << "    " << marks[max_id * PRDM + s];
+		}
+
+	}
+
+
+
+	
+	
+
+
+
+}
+
+
+int main() {
+	int cmd, arg;
+	std::cout << "Enter count all students: ";
+	std::cin >> size;
+	
+	names = new std::string[size];
+	marks = new float[size * 5];
+	
+
+	fillmarks();
+	print();
+
+
+
+
+	while (true){
+	std::cout << "\n\nMenu: 1 print  2 Retake  3 Sort(Bad work)  4 Exit\n > ";
+	std::cin >> cmd;
+		switch (cmd){
+
+		case 1:
+			print();
+			break;
+		case 2:
+			retake();
+			print();
+
+			break;
+		case 3:
+			printSort(0);
+			break;
+
+		case 4:
+			return 0;
+
+		default:
+			break;
+		}
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
 	system("pause");
 	return 0;
 }
