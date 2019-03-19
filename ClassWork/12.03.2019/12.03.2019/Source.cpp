@@ -137,16 +137,16 @@ int** del_row(int **arr, int *col, int *row, int index) {
 }
 
 
-
-
 int main() {
 	int index;
 	int *col = new int;
 	int *row = new int;
+
 	cout << "\n\tEnter row: ";
 	cin >> *row;
 	cout << "\n\tEnter col: ";
 	cin >> *col;
+
 	int **arr = new int*[*row];
 	for (int i = 0; i < *row; ++i) arr[i] = new int[*col];
 	
