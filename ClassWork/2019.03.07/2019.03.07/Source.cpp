@@ -103,7 +103,7 @@ void printSort(int key = 0) {
 				if (cheched[s] == j) noCheck = false;
 			}
 
-
+				
 			if (marks[j * PRDM + key] > max && noCheck) {
 
 				max = marks[j * PRDM + key];
