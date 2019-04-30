@@ -1,94 +1,116 @@
 #include <iostream>
 #include <string>
+#include <fstream>
+#include <string>
 using namespace std;
 
+const string PATHDB = "card.txt";
 
+class  Card {
+private:
+	int money;
+	int cashback;
+	bool isActive;
 
-class Point {
 public:
-	int x, y;
-	void show() {
-		cout << "Point x " << x << ", y " << y << "\n\n";
+	Card(int m, int c, bool i) {
+		money = m;
+		cashback = c;
+		isActive = i;
 	}
-};
-
-
-
-class Account {
-	float money = 0;
-	char currency = 'U';
-	bool accountIsOpen = false;
-	int sale = 0;
-
-
-public:
-	int getMoney(int count) {
-		if (count <= money && accountIsOpen) {
-			if (count > 1000) {
-				int nSale = count * sale / 100;
-				cout << "Sale: " << sale << "%  -" << nSale;
-				count -= nSale;
-				
-			}
-			
-			money -= count;
-			return count;
-			
+	void getMoney(int value) {
+		if (money < value || ! isActive) {
+			cout << "Not enough money or card no active!\n\n";
 		}
 		else {
-			cout << "Account is closed or not meney!\n";
-			return -1;
+			cout << "You got " << value << "money\n";
+			if (value >= 1000) {
+				cout << " + cashback 10%\n";
+				value -= value * cashback / 100;
+				
+			}
+			money -= value;
+			
 		}
 	}
-
-	void appendMoney(int count) {
-		money += count;
+	void append(int value) {
+		cout << "You append " << value << "money!\n";
+		money += value;
 	}
 
-	void openAccount() {
+	string getData() {
+		return to_string(money) + "\n" + to_string(cashback) + "\n" + to_string(isActive);
+	}
+	string getInfo() {
+		return "Money: "+ to_string(money) + "\nCashBack: " + to_string(cashback) + "\nIs Active: " + to_string(isActive) + "\n";
 
-		accountIsOpen = true;
-	}
-	void setSale(int s) {
-		if (s > 100) cout << "Error";
-		else sale = s;
-	}
-	void closeAccount() {
-
-		accountIsOpen = false;
-	}
-	void showMoney() {
-		cout << "Money: " << money << "\n";
 	}
 
 };
 
+Card loadCard() {
 
 
+
+	std::fstream file(PATHDB);
+
+
+	int money, cashback;
+	bool isActive;
+	string buffer;
+
+	getline(file, buffer);
+	money = stoi(buffer);
+	getline(file, buffer);
+	cashback = stoi(buffer);
+	getline(file, buffer);
+	isActive = stoi(buffer);
+
+
+	file.close();
+
+
+
+
+	Card card(money, cashback, isActive);
+
+	return card;
+}
+
+
+
+
+void saveCard(Card card) {
+	std::ofstream file(PATHDB);
+
+	file << card.getData();
+	file.close();
+}
 
 int main() {
-	Point point;
+
 	
-	int buf;
+	Card card = loadCard();
+	int sel, value;
+	while (true) {
+		cout << card.getInfo();
+		cout << "\n1 get money  2 add money : ";
+		cin >> sel;
+		cout << "Enter value: ";
+		cin >> value;
+		switch (sel)
+		{
 
-	cin >> buf;
-	point.x = buf;
-	
-	cin >> buf;
-	point.y = buf;
+		case 1: card.getMoney(value); break;
+		case 2: card.append(value); break;
 
-	point.show();
+			
+		}
+		saveCard(card);
+	}
 
 
-	Account acc;
-	acc.setSale(10);
-	acc.openAccount();
-	acc.appendMoney(10000);
-	acc.showMoney();
-	acc.getMoney(50);
-	acc.showMoney();
-	acc.getMoney(1500);
-	acc.closeAccount();
+
 
 	system("pause");
 	return 0;
